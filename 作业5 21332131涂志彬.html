@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Timer Demo</title>
+    <style>
+        #timer {
+            font-size: 3em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="timer">TIME：00:00:00</div>
+    <button id="start-pause-btn">Start/Pause</button>
+
+    <script>
+        const timerLabel = document.getElementById("timer");
+        const startPauseBtn = document.getElementById("start-pause-btn");
+
+        let secondsLeft = 0;
+        let paused = false;
+        function countdown(seconds) {
+            secondsLeft = seconds;
+            updateTimerLabel();
+
+            if (!paused && seconds > 0) {
+                setTimeout(() => countdown(seconds - 1), 1000);
+            }
+        }
+        function updateTimerLabel() {
+            const minutes = Math.floor(secondsLeft / 60);
+            const seconds = secondsLeft % 60;
+            const hours = Math.floor(minutes / 60);
+            timerLabel.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        startPauseBtn.addEventListener("click", () => {
+            if (paused) {
+                startPauseBtn.textContent = "Pause";
+                paused = false;
+                countdown(secondsLeft);
+            } else {
+                startPauseBtn.textContent = "Resume";
+                paused = true;
+            }
+        });
+        countdown(3600); 
+    </script>
+</body>
+</html>
