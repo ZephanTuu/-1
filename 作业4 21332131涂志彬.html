@@ -1,83 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>必应搜索</title>
-    <style>
-        body {
-         background: url("红绿灯背景.jpg") no-repeat center center fixed;
-         background-size: cover;
-         font-family: Arial, sans-serif;
-         margin: 0;
-         padding: 0;
-        }
-        .container {
-         margin: 0 auto;
-         max-width: 960px;
-         padding: 30px;
-        }
-        .logo {
-         display: inline-block;
-         font-size: 36px;
-         font-weight: bold;
-         margin: 0;
-         padding: 0;
-        }
-        .search-input {
-         background-color: #fff;
-         border: none;
-         border-radius: 20px;
-         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-         color: #333;
-         display: inline-block;
-         font-size: 16px;
-         height: 40px;
-         padding: 0 16px;
-         transition: width 0.3s ease-in-out;
-         width: 300px;
-        }
-        .search-input:focus {
-         width: 400px;
-        }
-        .search-submit {
-         background-color: #157efb;
-         border: none;
-         border-radius: 20px;
-         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-         color: #fff;
-         cursor: pointer;
-         display: inline-block;
-         font-size: 16px;
-         height: 40px;
-         margin-left: 10px;
-         padding: 0 16px;
-         transition: background-color 0.3s ease-in-out;
-        }
-        .search-submit:hover {
-         background-color: #0e63d9;
-        }
-        </style>
+	<title>Bing-like Page</title>
+	<style>
+		body {
+			background-image: url('./红绿灯背景.jpg');
+			background-size: cover;
+			margin: 0;
+			padding: 0;
+		}
+		#header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 999;
+		}
+		#logo {
+			width: 120px;
+			height: 40px;
+			background-image: url('your-logo-image-url');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#nav {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 400px;
+		}
+		#nav a {
+			color: #333;
+			text-decoration: none;
+			margin: 0 10px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		#search-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 120px;
+		}
+		#search-box {
+			position: relative;
+			width: 600px;
+			height: 50px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			border-radius: 25px;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: width 0.5s;
+		}
+		#search-box:hover {
+			width: 700px;
+		}
+		#search-box input[type="text"] {
+			width: 100%;
+			height: 100%;
+			padding: 10px 20px;
+			font-size: 20px;
+			border: none;
+			background-color: transparent;
+			z-index: 2;
+		}
+		#search-box img {
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+		#search-box:hover img {
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+	</style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="logo">搜索引擎</h1>
-        <form>
-         <input type="text" class="search-input" placeholder="输入关键词搜索">
-         <button type="submit" class="search-submit">搜索</button>
-        </form>
-       </div>
-       <script>
-        window.onload = function() {
-         var input = document.querySelector('.search-input');
-         input.addEventListener('focus', function() {
-          this.style.width = '400px';
-         });
-         input.addEventListener('blur', function() {
-          this.style.width = '300px';
-         });
-        }
-       </script>
+	<header id="header">
+		<div id="logo"></div>
+		<nav id="nav">
+			<a href="#">首页</a>
+			<a href="#">新闻</a>
+			<a href="#">体育</a>
+			<a href="#">娱乐</a>
+			<a href="#">更多</a>
+		</nav>
+	</header>
+	<div id="search-container">
+		<div id="search-box">
+			<input type="text" placeholder="搜索">
+			<img src="搜索按钮.jpg" alt="search">
+		</div>
+	</div>
 </body>
 </html>
