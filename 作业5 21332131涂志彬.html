@@ -1,50 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Timer Demo</title>
-    <style>
-        #timer {
-            font-size: 3em;
-            text-align: center;
-        }
-    </style>
+	<title>计时按钮</title>
+	<style>
+		#timer-btn {
+			font-size: 20px;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
 </head>
 <body>
-    <div id="timer">TIME：00:00:00</div>
-    <button id="start-pause-btn">Start/Pause</button>
+	<h2>Timing start</h2>
+	<button id="timer-btn">Time passed:</button>
+	<script>
+		let timer = null;
+		let startTime;
+		let elapsedTime = 0;
+		let isTiming = false;
 
-    <script>
-        const timerLabel = document.getElementById("timer");
-        const startPauseBtn = document.getElementById("start-pause-btn");
+		function startTimer() {
+			if (!isTiming) {
+				isTiming = true;
+				startTime = Date.now() - elapsedTime;
+				timer = setInterval(updateTimer, 10);
+			}
+		}
 
-        let secondsLeft = 0;
-        let paused = false;
-        function countdown(seconds) {
-            secondsLeft = seconds;
-            updateTimerLabel();
+		function stopTimer() {
+			if (isTiming) {
+				isTiming = false;
+				clearInterval(timer);
+				timer = null;
+			}
+		}
 
-            if (!paused && seconds > 0) {
-                setTimeout(() => countdown(seconds - 1), 1000);
-            }
-        }
-        function updateTimerLabel() {
-            const minutes = Math.floor(secondsLeft / 60);
-            const seconds = secondsLeft % 60;
-            const hours = Math.floor(minutes / 60);
-            timerLabel.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        }
-        startPauseBtn.addEventListener("click", () => {
-            if (paused) {
-                startPauseBtn.textContent = "Pause";
-                paused = false;
-                countdown(secondsLeft);
-            } else {
-                startPauseBtn.textContent = "Resume";
-                paused = true;
-            }
-        });
-        countdown(3600); 
-    </script>
+		function updateTimer() {
+			let currentTime = Date.now();
+			elapsedTime = currentTime - startTime;
+			let seconds = Math.floor(elapsedTime / 1000);
+			let milliseconds = Math.floor((elapsedTime % 1000) / 10);
+			document.getElementById("timer-btn").innerHTML = (seconds < 10 ? "0" : "") + seconds + ":" + (milliseconds < 10 ? "0" : "") + milliseconds;
+		}
+
+		document.getElementById("timer-btn").addEventListener("click", function() {
+			if (isTiming) {
+				stopTimer();
+			} else {
+				startTimer();
+			}
+		});
+	</script>
 </body>
 </html>
