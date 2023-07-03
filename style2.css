@@ -1,0 +1,187 @@
+/* 清除默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 设置页面宽度，使内容居中显示 */
+body {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FAEBD7;
+}
+/* 顶部菜单栏容器样式 */
+#header {
+    background-color: #F5F5DC;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid #F5F5DC;
+    border-radius: 10px;
+}
+/* 菜单项样式 */
+.label {
+    margin-right: 10px;
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+/* 样式 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* 按钮样式 */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* 按钮鼠标悬停样式 */
+.button:hover {
+    text-decoration: none;
+}
+
+.header{
+    text-align: left;
+}
+
+#banner{
+    margin-top: 30px;
+}
+
+.actions{
+    text-align: center;
+}
+
+/* 容器样式 */
+.features {
+    display: flex; /* 设置为 Flex 布局 */
+    flex-wrap: wrap; /* 当子项超出一行时换行 */
+    justify-content: center; /* 横向居中对齐 */
+    align-items: center; /* 纵向居中对齐 */
+    height: 100vh; /* 设置容器高度，可根据需求调整 */
+}
+
+/* 子项样式 */
+.item {
+    width: 300px; /* 设置子项宽度，可根据需求调整 */
+    height: 300px; /* 设置子项高度，可根据需求调整 */
+    /* 设置行高使文字居中 */
+    margin: 30px; /* 设置子项间距，可根据需求调整 */
+}
+
+.major{
+    margin-top: 30px;
+}
+
+.content img {
+    max-width: 100%;
+    max-height: 200px;
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.container img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* 搜索框容器 */
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* 搜索图标 */
+.search-icon {
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+/* 搜索输入框 */
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+/* 搜索按钮 */
+.search-button {
+    padding: 10px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #ccc;
+}
+
+/* 样式 */
+.footer {
+    background-color: #FAEBD7;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-top: 50px;
+}
+
+.contact{
+    background-color: #FAEBD7;
+    padding: 20px;
+    font-size: 14px;
+    color: #666;
+    margin-top: 50px;
+}
