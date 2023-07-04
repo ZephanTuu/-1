@@ -22,6 +22,7 @@ body {
     align-items: center;
     border: 3px solid #F5F5DC;
     border-radius: 10px;
+    text-align: center;
 }
 /* 菜单项样式 */
 .label {
@@ -131,7 +132,7 @@ body {
     object-fit: cover;
 }
 
-/* 搜索框容器 */
+/* 搜索框容器 * overflow 溢出后内容 border radius圆角半径/
 .search-container {
     display: flex;
     align-items: center;
