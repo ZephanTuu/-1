@@ -1,1 +1,165 @@
 
+/* 清除默认样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 设置页面宽度，使内容居中显示 */
+body {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 顶部菜单栏容器样式 */
+#header {
+  background-color: #f2f2f2;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 菜单项样式 */
+.label {
+  margin-right: 10px;
+  color:green;
+  text-decoration:10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* 菜单项鼠标悬停样式 */
+.label:hover {
+  background-color: #ddd;
+}
+
+/* 按钮样式 */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: red;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* 按钮鼠标悬停样式 */
+.button:hover {
+  text-decoration: none;
+}
+
+.header{
+  text-align: center;
+}
+
+#banner{
+  margin-top: 30px;
+}
+
+.actions{
+  text-align: right;
+}
+
+/* 容器样式 */
+.features {
+  display: flex; /* 设置为 Flex 布局 */
+  flex-wrap: wrap; /* 当超出一行时换行 */
+  justify-content: center; /* 横向居中对齐 */
+  align-items: center; /* 纵向居中对齐 */
+  height: 100px; /* 设置容器高度 */
+}
+
+/* 子项样式 */
+.item {
+  width: 300px; /* 设置子项宽度 */
+  height: 300px; /* 设置子项高度 */
+  /* 设置行高使文字居中 */
+  margin: 30px; /* 设置子项间距 */
+}
+
+.major{
+  margin-top: 30px;
+}
+
+.content img {
+  max-width: 100%;
+  max-height: 200px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 50%; /* 这里是将菜单栏垂直居中 */
+  left: 10px;
+  transform: translateY(-50%); /* 使用 translateY 调整菜单栏位置 */
+  width: 140px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 300px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.container img {
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* 搜索框容器的样式 */
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* 搜索图标的样式 */
+.search-icon {
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+/* 搜索输入框的样式*/
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+/* 搜索按钮的样式 */
+.search-button {
+  padding: 10px;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #ccc;
+}
+
+/* 选择器 样式 */
+.footer {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-top: 50px;
+}
