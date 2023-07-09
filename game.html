@@ -3,32 +3,65 @@
 <head>
     <title>游戏</title>
     <style>
+        #player {
+            position: absolute;
+            height: 15px;
+            width: 15px;
+            background-color: black;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        
+        #startButton {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 20px;
+            text-align: right;
+            font-size: larger;
+        }
+        
         #gameArea {
             position: relative;
             height: 600px;
             width: 800px;
             border: 1px solid blueviolet;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.19), 0px 6px 6px rgba(0,0,0,0.23);
+            margin-left: 200px;
         }
-        #player {
-            position: absolute;
-            height: 15px;
-            width: 15px;
-            background-color:black;
-        }
+        
         .obstacle {
             position: absolute;
             height: 50px;
             width: 50px;
             background-color: red;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #f00;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
     </style>
 </head>
 <body>
-    <button id="startButton">开始游戏</button>
-    <div id="gameArea">
-        <div id="player"></div>
+<button id="startButton">开始游戏</button>
+<div id="gameArea">
+     <div id="player"></div>
     </div>
     <div id="timer">0</div>
+
     <script src="game.js"></script>
 </body>
 </html>
