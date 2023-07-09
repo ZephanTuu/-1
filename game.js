@@ -41,16 +41,16 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 }
 
-    if (frameCount % 300 === 0) {
-        createObstacle();
-    }
-    frameCount++;
-    setInterval(gameloop,1000/30);
+if (frameCount % 300 === 0) {
+    createObstacle();
+}
+frameCount++;
+setInterval(gameLoop, 1000/30);
 
 function movePlayer(event) {
     if (event.key === 'w' || event.key === 'W') {
         if (parseInt(player.style.top) > 0) {
-            player.style.top = parseInt(player.style.top) - playerSpeed * 10+ 'px';
+            player.style.top = parseInt(player.style.top) - playerSpeed * 10 + 'px';
         }
     }
     if (event.key === 's' || event.key === 'S') {
@@ -68,6 +68,8 @@ function createObstacle() {
     gameArea.appendChild(obstacle);
     obstacles.push(obstacle);
 }
+
+// Rest of the code remains the same
 
 function moveObstacles() {
     for (let i = 0; i < obstacles.length; i++) {
@@ -97,3 +99,4 @@ function updateTimer() {
     let seconds = elapsed % 60;
     timer.textContent = minutes + ':' + seconds;
 }
+       
