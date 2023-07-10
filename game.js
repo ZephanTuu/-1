@@ -99,4 +99,11 @@ function updateTimer() {
     let seconds = elapsed % 60;
     timer.textContent = minutes + ':' + seconds;
 }
-       
+document.getElementById("playAgainButton").addEventListener("click", function() {
+    // Reset the game here
+    document.getElementById("timer").textContent = "00:00";
+    // Additional code to reset other game elements if needed
+    
+    // Refresh the webpage here
+    location.reload();
+});
